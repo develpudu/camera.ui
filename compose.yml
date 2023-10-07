@@ -1,5 +1,17 @@
-version: '2'
+version: "3.8"
+
 services:
+  camera.ui:
+    container_name: camera.ui
+    build: https://github.com/develpudu/camera.ui.git
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges
+    network_mode: bridge
+    ports:
+      - 8081:8081/tcp
+    volumes:
+      - ../volumes/cameraui-data/:/data
   homebridge:
     image: oznu/homebridge:latest
     restart: always
