@@ -11,7 +11,7 @@ services:
     ports:
       - 8081:8081/tcp
     volumes:
-      - ../volumes/cameraui-data/:/data
+      - ./volumes/cameraui-data/:/data
   homebridge:
     image: oznu/homebridge:latest
     restart: always
